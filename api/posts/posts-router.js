@@ -1,4 +1,3 @@
-// implement your posts router here
 const express = require('express')
 const Post = require('./posts-model')
 
@@ -96,7 +95,7 @@ postsRouter.delete('/:id', async (req, res) => {
             })
         }
         else {
-            const deletedPost = await Post.remove(id)
+            await Post.remove(id)
             res.status(200).json(post)
         }
     }
